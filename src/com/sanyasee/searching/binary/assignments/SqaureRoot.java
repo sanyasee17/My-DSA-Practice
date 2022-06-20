@@ -1,5 +1,6 @@
 package com.sanyasee.searching.binary.assignments;
 
+// https://leetcode.com/problems/sqrtx/
 public class SqaureRoot {
     public static void main(String[] args) {
         System.out.println(mySqrt(4));
