@@ -19,4 +19,38 @@ public class ShuffleString {
         }
         return String.valueOf(result);
     }
+    
+    // Optimised solution using cyclic sort
+
+    static String restoreStringUsingCyclicSort(String s, int[] arr){
+
+        int i = 0;
+
+        char[] result = s.toCharArray();
+
+        while(i < arr.length){
+            int correctIndex = arr[i];
+            if(correctIndex != i){
+                swapChar(result, i, correctIndex);
+                swapIndex(arr, i, correctIndex);
+            }else{
+                i++;
+            }
+        }
+
+        return String.valueOf(result);
+    }
+
+    static void swapChar(char[] result, int first, int second) {
+        char temp = result[first];
+        result[first] = result[second];
+        result[second] = temp;
+    }
+
+    static void swapIndex(int[] arr, int first, int second){
+        int temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
+    }
+    
 }
